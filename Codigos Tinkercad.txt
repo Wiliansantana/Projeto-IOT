@@ -1,0 +1,61 @@
+
+String ssid     = "Simulator Wifi";  // SSID conectar-se a
+String password = ""; // Nosso wifi virtual não tem senha (portanto, não faça suas coisas bancárias nesta rede)
+String host     = "api.thingspeak.com/"; // API do Open Weather Map
+const int httpPort   = 80;
+String uri     = "/update?api_key=JN9JXOPIQ2KQINBC&field1=";
+
+int setupESP8266(void) {
+  // Inicie nossa comunicação serial ESP8266
+  Serial.begin(115200);   // Conexão serial via USB ao computador
+  Serial.println("AT");   // Conexão serial na porta Tx / Rx para o ESP8266
+  delay(10);        // Tempo para o ESP responder
+  if (!Serial.find("OK")) return 1;
+    
+  // Conecte-se ao 123D Circuits Simulator Wifi
+  Serial.println("AT+CWJAP=\"" + ssid + "\",\"" + password + "\"");
+  delay(10);        // Tempo para o ESP responder
+  if (!Serial.find("OK")) return 2;
+  
+  // Abra a conexão TCP com o host:
+  Serial.println("AT+CIPSTART=\"TCP\",\"" + host + "\"," + httpPort);
+  delay(50);        // Tempo para o ESP responder
+  if (!Serial.find("OK")) return 3;
+  
+  return 0;
+}
+
+void enviaTemperaturaESP8266(void) {
+  
+  int temp = map(analogRead(A0),20,358,-40,125);
+  
+  // Construa nossa chamada HTTP
+  String httpPacket = "GET " + uri + String(temp) + " HTTP/1.1\r\nHost: " + host + "\r\n\r\n";
+  int length = httpPacket.length();
+  
+  // Envie o tamanho da nossa mensagem
+  Serial.print("AT+CIPSEND=");
+  Serial.println(length);
+  delay(10); // Tempo para o ESP responder if (!Serial.find(">")) return -1;
+
+  // Envie nossa solicitação http
+  Serial.print(httpPacket);
+  delay(10); // Wait a little for the ESP to respond
+  if (!Serial.find("SEND OK\r\n")) return;
+  
+  
+}
+
+
+void setup() {
+  
+  setupESP8266();
+               
+}
+
+void loop() {
+  
+  enviaTemperaturaESP8266();
+  
+  delay(10000);
+}
