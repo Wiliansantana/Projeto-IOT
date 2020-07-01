@@ -1,6 +1,6 @@
 
 
-<!doctype html>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,31 +10,75 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>IOT PJ</title>
+    <title>Hello, world!</title>
   </head>
-  <style type="text/css">
-  	.card{
-  		top: 100px;
-  	}
-  </style>
+
+  <style>
+
+
+	#footer {
+	height: 100px;
+	background: #3A3A3A;
+	margin-top: 15px; 
+
+}
+
+	#footer p {
+	margin: 0;
+	padding-top: 18px;
+	line-height: normal;
+	text-align: center;
+	
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+body{
+	margin-top: 15px; 
+}
+
+
+
+</style>
   <body>
-  	<br>
-  	Time:  Wilian / Fabricio / Geiza / Adany
-  <center><div class="card w-50 border-light">
-  <div class="card-body">
-    <h5 class="card-title">Tabela Temperatura</h5>
-    <p class="card-text"><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=C%C2%BA&type=line"></iframe>
 
-    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%25&type=line"></iframe></p>
-    <br>
-    <center><a href="#" class="btn btn-success">Liga/Desliga</a></center>
+  	<nav class=" fixed-top navbar navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> Time:&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="geisa.png" width="40" height="40" class="rounded-circle" alt="">
+    <img src="fabricio.png" width="40" height="40" class="rounded-circle" alt="">
+    <img src="wili.jpg" width="40" height="40" class="rounded-circle" alt="">
+    <img src="adany.jpg" width="40" height="40" class="rounded-circle" alt="">
+   
+  </a>
+  
+
   </div>
-</div>
-    </center>
+</nav>
+<br><br><br><br>
 
+<center>Graficos atividade IOT</center>
 
-    
+  	<center> 
 
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/widgets/193028"></iframe>
+
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/widgets/193031"></iframe>
+
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/maps/channel_show"></iframe>
+
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+  </center>
+	
+
+	<div id="footer">
+    <p> © Copyright 2020 </p>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
