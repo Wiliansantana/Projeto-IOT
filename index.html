@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Projeto IOT</title>
   </head>
 
   <style>
@@ -74,15 +74,36 @@ body{
 
   	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/widgets/193031"></iframe>
 
+  	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
   	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1081116/maps/channel_show"></iframe>
 
-  </center>
+
+  	<br><br>
+  	
+  	<input type="button" class="btn btn-success"  
+    onclick="location.href='https://api.thingspeak.com/update?api_key=XY203R6O053XQS47&field8=1'"
+    value="ON" />
+ 
+<input type="button"  class="btn btn-danger"
+    onclick="location.href='https://api.thingspeak.com/update?api_key=XY203R6O053XQS47&field8=0'"
+    value="OFF" />
+
+    
 	
 
 	<div id="footer">
     <p> © Copyright 2020 </p>
   </div>
 
+
+  	<script type="text/javascript">
+  		
+  		let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+		let response = await fetch(url);
+		await response.json();
+
+  	</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
